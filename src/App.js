@@ -6,16 +6,18 @@ import { Header } from './component/Header';
 
 function App() {
   return (
-    <div className="flex-container" >
+    <div >
       <Header />
+      <div className="flex-container" >
       <Allroute />
-      <div className='col-md-10 mb-5' >
+        <div className='col-md-10 mb-5' >
 
 
+       
+        </div>
 
+        <Footer />
       </div>
-      
-      <Footer />
     </div>
   );
 }

@@ -1,28 +1,38 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { json, useNavigate } from 'react-router-dom';
+import { funSignIn } from '../redux/Action';
 
 export const Login = () => {
   let [name, setName] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   let [isuser, setisUser] = useState(true)
-  let navigat = useNavigate();
+  //let navigat = useNavigate();
+  let dispatch = useDispatch();
+  let storeData = useSelector((data) => data)
 
-  const checkUser = () => {
+
+  const checkUser =async () => {
     fetch(`http://localhost:8090/user?email=${email}&password=${password}`)
       .then(res => res.json())
       .then((json) => {
         if (json.length > 0) {
-          navigat("/");
+          if (json[0].email === email && json[0].password === password) {
+            dispatch(funSignIn(json[0]));
+            console.log(storeData)
+          }
+          else
+            setisUser(false);
         }
         else {
           setisUser(false);
         }
       })
-      
+
 
   }
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     checkUser();
 
