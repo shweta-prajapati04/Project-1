@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { json, useNavigate } from 'react-router-dom';
 import { funSignIn } from '../redux/Action';
@@ -9,7 +9,14 @@ export const Login = () => {
   let [isuser, setisUser] = useState(true)
   let navigat = useNavigate();
   let dispatch = useDispatch();
-  //let storeData = useSelector((data) => data)
+  // let Login = useSelector((data) => data.isLogin)
+
+  // useEffect(() => {
+  //   if (Login) {
+  //     navigat('/');
+  //   }
+
+  // }, [])
 
 
   const checkUser = () => {
@@ -25,7 +32,7 @@ export const Login = () => {
         }
         else {
           setisUser(false);
-          
+
         }
       })
 
@@ -47,7 +54,7 @@ export const Login = () => {
             }
             <div className='col-md-7 mx-auto'>
               <form onSubmit={handleSubmit}>
-               
+
                 <div className=' mb-3'>
                   <input required type="email" placeholder='Email Address'
                     className='form-control'
