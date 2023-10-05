@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { funSignUp } from '../redux/Action';
 
 export const SignUp = () => {
 
   let [name, setName] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
-  let [isSuccess, setisSuccess] = useState(false);
+  //let [isSuccess, setisSuccess] = useState(false);
+  let dispatch=useDispatch();
+  let isSignUp = useSelector((data) => data.isSignUp)
+
+
 
   const addUser = (obj) => {
     fetch("http://localhost:8090/user/", {
@@ -13,9 +19,9 @@ export const SignUp = () => {
       method: "POST",
       body: JSON.stringify(obj)
     })
-      .then((res) => setisSuccess(true))
+      .then((res) => dispatch(funSignUp()))
       .then(() => onSuccess())
-
+     // setisSuccess(isSignUp);
 
   }
   const onSuccess = () => {
@@ -31,20 +37,21 @@ export const SignUp = () => {
       password: password
     }
     addUser(user);
+    
   }
   return (
     <div>
       <div className='col-md-10 mx-auto' >
         <div className='col-md-7  mx-auto'>
 
-          {isSuccess ? (<div className='alert alert-success ' role='alert' >Account created successfully
+          {isSignUp ? (<div className='alert alert-success ' role='alert' >Account created successfully
             <div className='alert alert-warning mt-3'> To Sign In  
              <a style={{ padding: "5px", textDecoration: "none", fontWeight: "bold" }} href="/login"> Click here</a></div>
           </div>)
             : null
 
           }
-          <div className='box  p-4' style={{ display: isSuccess ? "none" : "block" }} >
+          <div className='box  p-4' style={{ display: isSignUp ? "none" : "block" }} >
             <h2 className='formtitle'>Sign Up</h2>
 
 
