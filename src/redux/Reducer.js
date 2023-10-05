@@ -8,7 +8,7 @@ let initialState = {
 export const Reducer = (state = initialState, action) => {
     switch (action.type) {
         case SIGNIN:
-          
+            // console.log(action.payload)
             return {
                 ...state, user: action.payload, isLogin: true, isSignUp: false
             }
@@ -18,9 +18,8 @@ export const Reducer = (state = initialState, action) => {
             }
 
         case LOGOUT:
-            return {
-                ...state, isLogin: false,isSignUp: false
-            }
+            return  initialState
+
 
         default:
             return state

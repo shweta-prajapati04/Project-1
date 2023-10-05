@@ -102,7 +102,7 @@ export const Footer = () => {
           </div>
         </section>
 
-        <div className="text-center p-4" style={{ backgroundcolor: "rgba(0, 0, 0, 0.05);" }}>
+        <div className="text-center p-4" style={{ backgroundcolor: "rgba(0, 0, 0, 0.05)" }}>
           Copyright © 2023 - Liberty . All rights reserve
         </div>
 

@@ -1,9 +1,11 @@
 
 import React from 'react'
 import { Carousel } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux';
 
 export const Home = () => {
-
+  let dispatch = useDispatch();
+  let isLogin = useSelector((data) => data.isLogin)
 
   return (
     <div >
