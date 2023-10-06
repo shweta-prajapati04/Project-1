@@ -9,15 +9,6 @@ export const Login = () => {
   let [isuser, setisUser] = useState(true)
   let navigat = useNavigate();
   let dispatch = useDispatch();
-  // let Login = useSelector((data) => data.isLogin)
-
-  // useEffect(() => {
-  //   if (Login) {
-  //     navigat('/');
-  //   }
-
-  // }, [])
-
 
   const checkUser = () => {
     fetch(`http://localhost:8090/user?email=${email}&password=${password}`)
@@ -26,7 +17,7 @@ export const Login = () => {
         if (json.length > 0) {
           if (json[0].email === email && json[0].password === password) {
             dispatch(funSignIn(json[0]));
-            navigat('/')
+            navigat('/product')
           }
           else { setisUser(false); }
         }

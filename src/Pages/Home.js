@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export const Home = () => {
   let dispatch = useDispatch();
-  let isLogin = useSelector((data) => data.isLogin)
+  let isLogin = useSelector((data) => data.Reducer.isLogin)
 
   return (
     <div >
@@ -38,7 +38,7 @@ export const Home = () => {
       <div className='col-md-10 mx-auto'>
         <br>
         </br>
-        <h1>SHOP  BY CATEGORIES</h1>
+        <h1 className='formtitle'>SHOP  BY CATEGORIES</h1>
         <div className='grid_item'>
           <div>
             <Link className="linkp" to='/product/mens'>
@@ -60,10 +60,14 @@ export const Home = () => {
           </div>
         </div>
         <div className='col-md-10 mx-auto'>
-          <h1>OFFERS</h1>
+          <h1 className='formtitle'>OFFERS</h1>
           <div className='grid_item2'>
+          <div>
             <img src="https://i.pinimg.com/originals/4a/01/78/4a0178638eb269a35c45f021389b16dd.gif" alt="shoes"></img>
+            </div>
+            <div>
             <img src="https://png.pngtree.com/template/20221207/ourmid/pngtree-sale-shoes-banner-image_1920082.jpg" alt="shoes"></img>
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,11 @@
-import { legacy_createStore } from "redux";
+import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
 import { Reducer } from "./Reducer";
+import { ProductReducer } from "./ProductReducer/ProductReducer";
+import thunk from "redux-thunk";
 
-export const Store=legacy_createStore(Reducer)
+let combineReducer=combineReducers({
+    Reducer,
+    ProductReducer
+})
+
+export const Store=legacy_createStore(combineReducer,applyMiddleware(thunk))

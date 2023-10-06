@@ -9,7 +9,7 @@ export const SignUp = () => {
   let [password, setPassword] = useState("");
   //let [isSuccess, setisSuccess] = useState(false);
   let dispatch=useDispatch();
-  let isSignUp = useSelector((data) => data.isSignUp)
+  let isSignUp = useSelector((data) => data.Reducer.isSignUp)
 
 
 

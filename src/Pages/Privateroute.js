@@ -4,8 +4,8 @@ import { Navigate } from 'react-router-dom'
 
 export const Privateroute = ({ child }) => {
 
-    let isLogin = useSelector((data) => data.isLogin)
+    let isLogin = useSelector((data) => data.Reducer.isLogin)
     return (
-        !isLogin ? child : <Navigate to='/login'></Navigate>
+        isLogin ? child : <Navigate to='/login'></Navigate>
     )
 }

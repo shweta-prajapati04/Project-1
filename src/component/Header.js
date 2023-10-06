@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { funLogout } from '../redux/Action';
 export const Header = () => {
-    let data = useSelector((data) => data)
+    let data = useSelector((data) => data.Reducer)
     let isLogin = data.isLogin;
     let user = data.user.name;
     let dispatch = useDispatch();
