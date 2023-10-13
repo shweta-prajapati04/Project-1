@@ -8,12 +8,12 @@ function App() {
   return (
     <div>
       <Header />
-      <div className="col-md-10 mx-auto">
+      <div className='container-fluid col-md-12' >
         <Allroute />
-        
+        </div>
 
         
-      </div>
+      
       <Footer />
     </div>
   );

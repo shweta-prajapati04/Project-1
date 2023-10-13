@@ -4,154 +4,333 @@
       "name": "shwet",
       "email": "s@gmail.com",
       "password": "123",
+      "isadmin": false,
+      "address": "surat",
       "id": 1
     },
     {
-      "name": "a",
-      "email": "sd@gmail.com",
-      "password": "123",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "isadmin": true,
+      "address": "surat",
       "id": 9
-    },
-    {
-      "name": "test",
-      "email": "t@gmail.com",
-      "password": "123",
-      "id": 10
-    },
-    {
-      "name": "t",
-      "email": "t@fg.com",
-      "password": "123",
-      "id": 11
-    },
-    {
-      "name": "t",
-      "email": "t@gmail.com",
-      "password": "123",
-      "id": 12
     }
   ],
   "products": [
     {
-      "id":"1",
-      "title": "ROYCE-2 Blue Men's Running Shoes",
+      "catagory": "mens",
+      "title": " Previous Next MEN'S BOUNDER - INSHORE",
+      "price": "1500",
+      "size": "4",
+      "imageurl": "https://www.skechers.in/on/demandware.static/-/Sites-skechers_india/default/dw90862c5d/images/large/196642721059-1.jpg",
+      "color": "black",
+      "isnew": "false",
+      "id": 3
+    },
+    {
+      "catagory": "mens",
+      "title": "FIRST Grey Men's Running Shoes",
+      "price": "1809",
+      "size": "6",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/FIRST_11G-787_L.GRY-BLK.jpg?v=1670326275&width=720",
+      "color": "grey",
+      "isnew": false,
+      "id": 4
+    },
+    {
+      "catagory": "mens",
+      "title": "RIM Black Men's Running Shoes",
+      "price": "1088",
+      "size": "8",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/11G-677-G-BLK-RED-2.jpg?v=1695014332&width=720",
+      "color": "navy",
+      "isnew": "false",
+      "id": 5
+    },
+    {
+      "catagory": "mens",
+      "title": "Rim Men's white Running Shoes",
+      "price": "2000",
+      "size": "9",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/RIM_11G-790_OFFWHT-NAVY_2.jpg?v=1670325652&width=720",
+      "color": "grey",
+      "isnew": false,
+      "id": 6
+    },
+    {
+      "catagory": "mens",
+      "title": "NORTH PLUS Black Men's Running Shoes",
+      "price": "1000",
+      "size": "6",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/files/NORTHPLUS_11G-677_BLK.jpg?v=1692983765&width=720",
+      "color": "black",
+      "isnew": false,
+      "id": 7
+    },
+    {
+      "catagory": "mens",
+      "title": "ROCKEE Blue Men's Casual Shoes",
+      "price": "1500",
+      "size": "8",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/files/ROCKEE_22G-691_BLU_2.jpg?v=1683146727&width=720",
+      "color": "navy",
+      "isnew": false,
+      "id": 8
+    },
+    {
+      "catagory": "mens",
+      "title": "TYSON Pro Burgundy Men's Running Shoes",
+      "price": "800",
+      "size": "9",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/files/TysonProBurgundy-Blk.jpg?v=1695899264&width=720",
+      "color": "red",
+      "isnew": false,
+      "id": 9
+    },
+    {
+      "catagory": "mens",
+      "title": "TYSON Pro Navy Men's Running Shoes",
+      "price": "1050",
+      "size": "10",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/CG-120-G-NAVY-YLO-1.jpg?v=1670326458&width=720",
+      "color": "navy",
+      "isnew": false,
+      "id": 10
+    },
+    {
+      "catagory": "mens",
+      "title": "ABACUS Yellow Men's Running Shoes",
+      "price": "1200",
+      "size": "7",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/files/AbacusMSTD-Blue.jpg?v=1695983603&width=720",
+      "color": "yellow",
+      "isnew": false,
+      "id": 11
+    },
+    {
+      "catagory": "mens",
+      "title": "FIRST White Men's Running Shoes",
+      "price": "1080",
+      "size": "8",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/FIRST_11G-787_WHT-BLK-RED.jpg?v=1670326497&width=720",
+      "color": "white",
+      "isnew": false,
+      "id": 12
+    },
+    {
       "catagory": "womens",
-      "price": "699",
-      "imageurl":"https://www.campusshoes.com/cdn/shop/products/ROYCE-2_CG-248_BLU-SKY_2.jpg",
-      "description": "This pair of CAMPUS running shoes are ideal for all your daily looks.",
-      "size": "7",
-      "color": "blue"
+      "title": "ZOE PLUS Purple Women's Casual Shoes",
+      "price": "950",
+      "size": "6",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/10G-149-L-DPRPL-LPINK-2.jpg?v=1670326009&width=720",
+      "color": "purple",
+      "isnew": "false",
+      "id": 13
     },
     {
-      "id":"2",
-      "title": "FIRST Grey Men's Running Shoes",
-      "catagory": "mens",
-      "price": "699",
-      "imageurl":"https://www.campusshoes.com/cdn/shop/files/FIRST-11G-787-L.GRY-BLK_2.jpg",
-      "description": "This pair of CAMPUS running shoes are ideal for all your daily looks.",
-      "size": "7",
-      "color": "blue"
-    },
-    {
-      "id":"3",
-      "title": "Fortune By Liberty mens JPL-294 Tan Formal Lacing Shoes",
-      "catagory": "mens",
-      "price": "699",
-      "imageurl":"https://www.campusshoes.com/cdn/shop/products/EUROPA-CG-584-MO.BLU-MSTD_2.jpg",
-      "description": "This pair of CAMPUS running shoes are ideal for all your daily looks.",
-      "size": "7",
-      "color": "blue"
-    },
-
-    {
-      "id":"4",
-      "title": "ROYCE-2 Blue Men's Running Shoes",
-      "catagory": "mens",
-      "price": "699",
-      "imageurl":"https://www.campusshoes.com/cdn/shop/products/ROYCE-2_CG-248_BLU-ORG.jpg",
-      "description": "This pair of CAMPUS running shoes are ideal for all your daily looks.",
-      "size": "7",
-      "color": "blue"
-    },
-    {
-      "id":"5",
-      "title": "FIRST Grey Men's Running Shoes",
-      "catagory": "kids",
-      "price": "699",
-      "imageurl":"https://www.campusshoes.com/cdn/shop/files/FIRST-11G-787-L.GRY-BLK_2.jpg",
-      "description": "This pair of CAMPUS running shoes are ideal for all your daily looks.",
-      "size": "7",
-      "color": "blue"
-    },
-    {
-      "id":"6",
-      "title": "Fortune By Liberty mens JPL-294 Tan Formal Lacing Shoes",
-      "catagory": "kids",
-      "price": "699",
-      "imageurl":"https://www.campusshoes.com/cdn/shop/products/EUROPA-CG-584-MO.BLU-MSTD_2.jpg",
-      "description": "This pair of CAMPUS running shoes are ideal for all your daily looks.",
-      "size": "7",
-      "color": "blue"
-    },
-    {
-      "id":"7",
-      "title": "ROYCE-2 Blue Men's Running Shoes",
-      "catagory": "kids",
-      "price": "699",
-      "imageurl":"https://www.campusshoes.com/cdn/shop/products/ROYCE-2_CG-248_BLU-SKY_2.jpg",
-      "description": "This pair of CAMPUS running shoes are ideal for all your daily looks.",
-      "size": "7",
-      "color": "blue"
-    },
-    {
-      "id":"8",
-      "title": "FIRST Grey Men's Running Shoes",
       "catagory": "womens",
-      "price": "699",
-      "imageurl":"https://www.campusshoes.com/cdn/shop/files/FIRST-11G-787-L.GRY-BLK_2.jpg",
-      "description": "This pair of CAMPUS running shoes are ideal for all your daily looks.",
-      "size": "7",
-      "color": "blue"
+      "title": "CAMP-TRAPPY Pink Women Running Shoes",
+      "price": "1050",
+      "size": "5",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/CAMP-TRAPPY_22L-869_L.PEACH-L.PINK_2.jpg?v=1670325540&width=720",
+      "color": "pink",
+      "isnew": "false",
+      "id": 14
     },
     {
-      "id":"9",
-      "title": "Fortune By Liberty mens JPL-294 Tan Formal Lacing Shoes",
-      "catagory": "mens",
-      "price": "699",
-      "imageurl":"https://www.campusshoes.com/cdn/shop/products/EUROPA-CG-584-MO.BLU-MSTD_2.jpg",
-      "description": "This pair of CAMPUS running shoes are ideal for all your daily looks.",
-      "size": "7",
-      "color": "blue"
-    },
-    {
-      "id":"10",
-      "title": "ROYCE-2 Blue Men's Running Shoes",
       "catagory": "womens",
-      "price": "699",
-      "imageurl":"https://www.campusshoes.com/cdn/shop/products/ROYCE-2_CG-248_BLU-SKY_2.jpg",
-      "description": "This pair of CAMPUS running shoes are ideal for all your daily looks.",
-      "size": "7",
-      "color": "blue"
+      "title": "CAMP-CLANCY Navy Women Running Shoes",
+      "price": "1550",
+      "size": "5",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/CAMP-CLANCY_22L-865_NAVY-PINK.jpg?v=1670325532&width=720",
+      "color": "navy",
+      "isnew": "false",
+      "id": 15
     },
     {
-      "id":"11",
+      "catagory": "womens",
+      "title": "CAMP-RUBY Yellow Women Sneakers Shoes",
+      "price": "1055",
+      "size": "7",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/CAMP-RUBY_22L-881_LMN.GRN-SMOKE.GRY_2_1867b3da-c0d5-4efe-b4d2-9c4a378651b3.jpg?v=1680591767&width=720",
+      "color": "yellow",
+      "isnew": "false",
+      "id": 16
+    },
+    {
+      "catagory": "womens",
+      "title": "NASA Red Running Shoes",
+      "price": "850",
+      "size": "5",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/5G-546-G-RED-DGRY-2.jpg?v=1670326054&width=720",
+      "color": "red",
+      "isnew": "false",
+      "id": 17
+    },
+    {
+      "catagory": "womens",
+      "title": "LISA N Grey Women Running Shoes",
+      "price": "750",
+      "size": "8",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/LISA-GRY-PINK_2.jpg?v=1670325762&width=720",
+      "color": "grey",
+      "isnew": "false",
+      "id": 18
+    },
+    {
+      "catagory": "womens",
+      "title": "ALICE White Women's Sneakers Shoes",
+      "price": "2000",
+      "size": "7",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/9G-178-L-WHT-SGRN-2_357df842-3d70-4ca1-b0c6-012900f75ae6.jpg?v=1679719385&width=720",
+      "color": "white",
+      "isnew": "false",
+      "id": 19
+    },
+    {
+      "catagory": "womens",
+      "title": "CRISTY Black Women's Running Shoes",
+      "price": "809",
+      "size": "6",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/files/CRISTYBLK-RANI.jpg?v=1695892758&width=720",
+      "color": "black",
+      "isnew": "false",
+      "id": 20
+    },
+    {
+      "catagory": "womens",
+      "title": "CRISTY Women's Running Shoes",
+      "price": "950",
+      "size": "5",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/files/CRISTYNAVY-SKY.jpg?v=1695892955&width=720",
+      "color": "navy",
+      "isnew": "false",
+      "id": 21
+    },
+    {
+      "catagory": "womens",
+      "title": "SD-062 Pink Women's Sandals",
+      "price": "750",
+      "size": "10",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/files/SD-062MauveOffWht.jpg?v=1695907184&width=720",
+      "color": "pink",
+      "isnew": "false",
+      "id": 22
+    },
+    {
+      "catagory": "kids",
+      "title": "CAMP IAN Red Kids Running Shoes",
+      "price": "500",
+      "size": "4",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/CAMPIAN_22K-109_RED-BLU_2.jpg?v=1670325809&width=720",
+      "color": "red",
+      "isnew": false,
+      "id": 23
+    },
+    {
+      "catagory": "kids",
+      "title": "BINGO-151S White Child School Shoes",
+      "price": "750",
+      "size": "3",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/BINGO-51_BINGO-51_WHT_2.jpg?v=1670325743&width=720",
+      "color": "white",
+      "isnew": "false",
+      "id": 24
+    },
+    {
+      "catagory": "kids",
+      "title": "SRM-02V Blue Kids Running Shoes",
+      "price": "900",
+      "size": "2",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/SRM-02V_SRM-02V_BLU-R.BLU_2.jpg?v=1670325414&width=720",
+      "color": "navy",
+      "isnew": false,
+      "id": 25
+    },
+    {
+      "catagory": "kids",
+      "title": "PT-103 Grey Kid's Running Shoes",
+      "price": "950",
+      "size": "4",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/PT-103_PT-103_D.GRY-WHT_2.jpg?v=1670326029&width=720",
+      "color": "grey",
+      "isnew": false,
+      "id": 26
+    },
+    {
+      "catagory": "kids",
+      "title": "CAMP-BOOTH CH Navy Child Running Shoes",
+      "price": "1050",
+      "size": "3",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/CAMP-BOOTHCH_22C-140K_NAVY-RED_2.jpg?v=1670325524&width=720",
+      "color": "navy",
+      "isnew": false,
+      "id": 27
+    },
+    {
+      "catagory": "kids",
+      "title": "CAMP-BOOTH CH Yellow Child Running Shoes",
+      "price": "850",
+      "size": "1",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/CAMP-BOOTHCH_22C-140K_YLW-D.GRY_2.jpg?v=1670325524&width=720",
+      "color": "yellow",
+      "isnew": "false",
+      "id": 28
+    },
+    {
+      "catagory": "kids",
+      "title": "GC-22926K Purple Kids Sandals",
+      "price": "650",
+      "size": "3",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/GC-222926K_GC-22926K_LAVENDER-VIOLET_2.jpg?v=1670325501&width=720",
+      "color": "purple",
+      "isnew": false,
+      "id": 29
+    },
+    {
+      "catagory": "kids",
+      "title": "T&J-06 White Kid's Running Shoes",
+      "price": "1050",
+      "size": "2",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/T_J-06-WHT-BLU_2.jpg?v=1670325811&width=720",
+      "color": "white",
+      "isnew": false,
+      "id": 30
+    },
+    {
+      "catagory": "kids",
+      "title": "NINZA JR Maroon Child Running Shoes",
+      "price": "850",
+      "size": "5",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/NINZA-JR-6C-570-MHRN-SIL_2.jpg?v=1670325632&width=720",
+      "color": "red",
+      "isnew": false,
+      "id": 31
+    },
+    {
+      "catagory": "kids",
+      "title": "SM-415 Kid's Casual Shoes",
+      "price": "500",
+      "size": "1",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/products/SM-415-YLW-BLK_2.jpg?v=1670326021&width=720",
+      "color": "yellow",
+      "isnew": false,
+      "id": 32
+    }
+  ],
+  "cart": [
+    {
+      "id": "2",
       "title": "FIRST Grey Men's Running Shoes",
       "catagory": "mens",
       "price": "699",
-      "imageurl":"https://www.campusshoes.com/cdn/shop/files/FIRST-11G-787-L.GRY-BLK_2.jpg",
+      "imageurl": "https://www.campusshoes.com/cdn/shop/files/FIRST-11G-787-L.GRY-BLK_2.jpg",
       "description": "This pair of CAMPUS running shoes are ideal for all your daily looks.",
       "size": "7",
-      "color": "blue"
-    },
-    {
-      "id":"12",
-      "title": "Fortune By Liberty mens JPL-294 Tan Formal Lacing Shoes",
-      "catagory": "mens",
-      "price": "699",
-      "imageurl":"https://www.campusshoes.com/cdn/shop/products/EUROPA-CG-584-MO.BLU-MSTD_2.jpg",
-      "description": "This pair of CAMPUS running shoes are ideal for all your daily looks.",
-      "size": "7",
-      "color": "blue"
+      "color": "blue",
+      "qty": 3,
+      "userid": 1
     }
   ]
 }

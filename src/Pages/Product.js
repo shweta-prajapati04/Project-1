@@ -7,25 +7,76 @@ import Accordion from 'react-bootstrap/Accordion';
 import { Spinner } from 'react-bootstrap';
 
 export const Product = () => {
-    let { catagory } = useParams();
+    const catParam = useParams();
+    let catagory = "";
+    if (Object.keys(catParam).length > 0)
+        catagory = catParam.catagory;
+    const livejsonServer = "http://localhost:8090" //https://first-0kkt.onrender.com
+    const [filterColor, setFilterColor] = useState({
+        param: []
+    });
+    // const [totalPage, setTotalPage] = useState([]);
+    // const [page, setPage] = useState(1);
+
     let fetchApi = "";
-    if (catagory != null && catagory != "") {
+    let filter = "";
+    
+    if (catagory !== null && catagory !== "") {
         fetchApi = `?catagory=${catagory}`
-        //console.log(catagory)
+    }
+    if (filterColor.param.length > 0) {
+
+        filter = filterColor.param;
+        if (fetchApi == "")
+            fetchApi = "?" + filter
+        else
+            fetchApi = fetchApi + filter
     }
     let dispatch = useDispatch();
-    let storeData = useSelector((store) => store.ProductReducer)
+    let { isError, isLoading, data } = useSelector((store) => store.ProductReducer)
     let [product, setProduct] = useState([]);
 
     const fetchData = () => {
-        dispatch(funFetchProduct)
-        setProduct(storeData.data);
+
+        dispatch(funFetchProduct(fetchApi))
+
 
     }
+
+    // const handlePagination = (currentPage) => {
+    //     if (currentPage >= 1 && currentPage <= data.length / 10 && currentPage != page)
+    //         setPage(currentPage)
+
+    // }
+
     useEffect(() => {
         fetchData();
-    }, [product])
+    }, [filterColor,catagory])
 
+    const handleChange = (e) => {
+
+        const { value, checked, name } = e.target;
+        const { param } = filterColor;
+        let query = "";
+        if (name == "color")
+            query = "&color=";
+        else if (name == "size")
+            query = "&size="
+        else if (name == "catagory")
+            query = "&catagory="
+
+        if (checked) {
+            setFilterColor({
+                param: [...param, query + value],
+            });
+        }
+        else {
+            setFilterColor({
+                param: param.filter((e) => e !== query + value),
+            });
+        }
+
+    }
 
     return (
         <div>
@@ -38,15 +89,20 @@ export const Product = () => {
                                 <Accordion.Header>catagory</Accordion.Header>
                                 <Accordion.Body>
                                     <div className="form-check">
-                                        <input type="checkbox" className='form-check-input' value='mens' />
+                                        <input type="checkbox" className='form-check-input' value='mens'
+                                            name="catagory" onChange={handleChange} />
                                         <label className='form-check-label'>Men</label>
                                     </div>
                                     <div className="form-check">
-                                        <input type="checkbox" className='form-check-input' value='women' />
+                                        <input type="checkbox" className='form-check-input' value='womens'
+                                            name="catagory" onChange={handleChange}
+                                        />
                                         <label className='form-check-label'>Women</label>
                                     </div>
                                     <div className="form-check">
-                                        <input type="checkbox" className='form-check-input' value='kids' />
+                                        <input type="checkbox" className='form-check-input' value='kids'
+                                            name="catagory" onChange={handleChange}
+                                        />
                                         <label className='form-check-label'>Kids</label>
                                     </div>
 
@@ -57,36 +113,48 @@ export const Product = () => {
                                 <Accordion.Body>
                                     <div className='filter_color'>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='red' />
+                                            <input type="checkbox" className='form-check-input' value='red'
+                                                name="color" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'><div style={{ backgroundColor: "red" }}></div></label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='red' />
+                                            <input type="checkbox" className='form-check-input' value='navy'
+                                                name="color" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'><div style={{ backgroundColor: "navy" }}></div></label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='red' />
+                                            <input type="checkbox" className='form-check-input' value='black'
+                                                name="color" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'><div style={{ backgroundColor: "black" }}></div></label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='red' />
+                                            <input type="checkbox" className='form-check-input' value='pink'
+                                                name="color" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'><div style={{ backgroundColor: "pink" }}></div></label>
                                         </div>
 
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='red' />
+                                            <input type="checkbox" onChange={handleChange} className='form-check-input' value='yellow'
+                                                name="color" />
                                             <label className='form-check-label'><div style={{ backgroundColor: "yellow" }}></div></label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='red' />
+                                            <input type="checkbox" onChange={handleChange} className='form-check-input' value='purple'
+                                                name="color" />
                                             <label className='form-check-label'><div style={{ backgroundColor: "purple" }}></div></label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='red' />
-                                            <label className='form-check-label'><div style={{ backgroundColor: "orange" }}></div></label>
+                                            <input type="checkbox" onChange={handleChange} className='form-check-input' value='grey'
+                                                name="color" />
+                                            <label className='form-check-label'><div style={{ backgroundColor: "grey" }}></div></label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='red' />
+                                            <input type="checkbox" onChange={handleChange} className='form-check-input' value='white'
+                                                name="color" />
                                             <label className='form-check-label'><div style={{ backgroundColor: "white" }}></div></label>
                                         </div>
 
@@ -98,43 +166,63 @@ export const Product = () => {
                                 <Accordion.Body>
                                     <div className='filter_size'>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='1' />
+                                            <input type="checkbox" className='form-check-input' value='1'
+                                                name="size" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'>1</label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='2' />
+                                            <input type="checkbox" className='form-check-input' value='2'
+                                                name="size" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'>2</label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='3' />
+                                            <input type="checkbox" className='form-check-input' value='3'
+                                                name="size" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'>3</label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='4' />
+                                            <input type="checkbox" className='form-check-input' value='4'
+                                                name="size" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'>4</label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='5' />
+                                            <input type="checkbox" className='form-check-input' value='5'
+                                                name="size" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'>5</label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='6' />
+                                            <input type="checkbox" className='form-check-input' value='6'
+                                                name="size" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'>6</label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='7' />
+                                            <input type="checkbox" className='form-check-input' value='7'
+                                                name="size" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'>7</label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='8' />
+                                            <input type="checkbox" className='form-check-input' value='8'
+                                                name="size" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'>8</label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='9' />
+                                            <input type="checkbox" className='form-check-input' value='9'
+                                                name="size" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'>9</label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" className='form-check-input' value='10' />
+                                            <input type="checkbox" className='form-check-input' value='10'
+                                                name="size" onChange={handleChange}
+                                            />
                                             <label className='form-check-label'>10</label>
                                         </div>
 
@@ -145,26 +233,27 @@ export const Product = () => {
                     </div>
                     <div className='col-md-10  mx-auto'>
                         {
-                            storeData.isError ? (<div className="alert alert-danger" role="alert">T
+                            isError ? (<div className="alert alert-danger" role="alert">T
                                 Some thing went wrong !
                             </div>
                             )
                                 : null
                         }
-                        {storeData.isLoading && !storeData.isError
+                        {isLoading && !isError
                             ? (<div className='mt-5'><Spinner animation="grow" variant="success" />
-                            <Spinner animation="grow" variant="danger" /></div>)
+                                <Spinner animation="grow" variant="danger" /></div>)
                             : null
                         }
 
                         {
-                            storeData.data.length > 0 && (<div className='products'>
+                            
+                            data.length > 0 && (<div className='products'>
                                 {
-                                    storeData.data.map((item) => {
+                                    data.map((item) => {
                                         return (
                                             <div className='product__single' key={item.id}>
-                                                <Link className='linkp' to='/product'>
-                                                    <div className='image'>   <img src={item.imageurl} alt={item.title}></img></div>
+                                                <Link className='linkp' to={`/product/detail/${item.id}`}>
+                                                    <div className='image'>  <img src={item.imageurl} alt={item.title}></img></div>
                                                     <div className='title'>{item.title}</div>
                                                     <div className='price text-center'> &#8377; {item.price}</div>
                                                 </Link>
@@ -174,7 +263,23 @@ export const Product = () => {
                                 }
                             </div>
                             )
+
                         }
+                        {/*{
+                            data.length > 0 && <div className='pagination'>
+
+                                <span className={page > 1 ? "":"Pagi_disable"}
+                                 onClick={()=>handlePagination(page - 1)}>◀</span>
+
+
+
+                                {[...Array(data.length / 10)].map((_, i) => {
+                                    return <span onClick={()=>handlePagination(i + 1)} >{i + 1}</span>
+                                })}
+                                <span className={page< data.length/10 ? "":"Pagi_disable"}
+                                onClick={()=>handlePagination(page + 1)}>▶</span>
+                            </div>
+                        }*/}
                     </div>
                 </div>
             </div>
