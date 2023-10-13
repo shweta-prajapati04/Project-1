@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Footer = () => {
   return (
 
 
     <div className='footer_text'>
-
+<br></br><br></br>
       <footer className="text-center text-lg-start bg-light text-muted">
         <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           <div className="me-5 d-none d-lg-block">
@@ -53,16 +54,16 @@ export const Footer = () => {
                   ONLINE SHOPPING
                 </h6>
                 <p>
-                  <a href="#!" className="text-reset">New Arrival</a>
+                  <Link to="/product" className="text-reset">New Arrival</Link>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">Men</a>
+                  <Link to="/product/mens" className="text-reset">Men</Link>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">Women</a>
+                  <Link to="/product/womens" className="text-reset">Women</Link>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">Kids</a>
+                  <Link to="/product/kids" className="text-reset">Kids</Link>
                 </p>
 
               </div>

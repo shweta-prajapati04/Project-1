@@ -1,4 +1,4 @@
-import { LOGOUT, SIGNIN, SIGNUP } from "./ActionType"
+import { CART, LOGOUT, SIGNIN, SIGNUP } from "./ActionType"
 
 export const funSignIn=(data)=>{
     return{
@@ -14,5 +14,11 @@ export const funSignUp=()=>{
 export const funLogout=()=>{
     return{
         type:LOGOUT
+    }
+}
+export const funAddCart=(data)=>{
+    return{
+        type:CART,
+        payload:data
     }
 }

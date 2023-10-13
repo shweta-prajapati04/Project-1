@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { json, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {  useNavigate } from 'react-router-dom';
 import { funSignIn } from '../redux/Action';
 
 export const Login = () => {
@@ -9,8 +9,6 @@ export const Login = () => {
   let [isuser, setisUser] = useState(true)
   let navigat = useNavigate();
   let dispatch = useDispatch();
-  //let storeData = useSelector((data) => data)
-
 
   const checkUser = () => {
     fetch(`http://localhost:8090/user?email=${email}&password=${password}`)
@@ -19,13 +17,13 @@ export const Login = () => {
         if (json.length > 0) {
           if (json[0].email === email && json[0].password === password) {
             dispatch(funSignIn(json[0]));
-            navigat('/')
+            navigat('/product')
           }
           else { setisUser(false); }
         }
         else {
           setisUser(false);
-          
+
         }
       })
 
@@ -47,7 +45,7 @@ export const Login = () => {
             }
             <div className='col-md-7 mx-auto'>
               <form onSubmit={handleSubmit}>
-               
+
                 <div className=' mb-3'>
                   <input required type="email" placeholder='Email Address'
                     className='form-control'
